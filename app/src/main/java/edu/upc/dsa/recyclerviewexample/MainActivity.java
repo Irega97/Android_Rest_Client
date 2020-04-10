@@ -17,10 +17,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Obtenemos recycler view
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
         //Para optimizar y que vaya mas fluido
         recyclerView.setHasFixedSize(true);
 
@@ -35,7 +34,7 @@ public class MainActivity extends Activity {
         }
 
         // define an adapter
-        mAdapter = new MyAdapter(input);
+        mAdapter = new MyAdapter(input, MainActivity.this);
         recyclerView.setAdapter(mAdapter);
     }
 }

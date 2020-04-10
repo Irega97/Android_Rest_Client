@@ -1,7 +1,7 @@
 package edu.upc.dsa.recyclerviewexample;
 
-import java.util.ArrayList;
-import java.util.List;
+import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -10,8 +10,14 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+    //Aqui hay que declarar las cosas que queremos que se muestren en pantalla
+    //Añadimos la actividad porque cambiaremos a otra
+    //Los inicializamos en el constructor
     private List<String> values;
+    Activity activity;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -37,14 +43,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         notifyItemInserted(position);
     }
 
-    public void remove(int position) {
+    /*public void remove(int position) {
         values.remove(position);
         notifyItemRemoved(position);
-    }
+    }*/
 
-    // Constructor del adaptador
-    public MyAdapter(List<String> myDataset) {
+    // Constructor del adaptador, le pasamos lista tracks y actividad
+    public MyAdapter(List<String> myDataset, Activity activity) {
         values = myDataset;
+        this.activity = activity;
     }
 
     // Create new views (invoked by the layout manager)
@@ -76,7 +83,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             @Override
             public void onClick(View v) {
                 //Usamos posicion holder para que se vayan actualizando a medida que borras posiciones
-                remove(vh.getAdapterPosition());
+                //remove(vh.getAdapterPosition());
+
+                //Abrimos actividad info track al pinchar en un track
+                Intent i = new Intent(activity.getApplication(), TrackActivity.class);
+                activity.startActivity(i);
             }
         });
 
