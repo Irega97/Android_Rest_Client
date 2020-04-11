@@ -43,10 +43,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         notifyItemInserted(position);
     }
 
-    /*public void remove(int position) {
+    public void remove(int position) {
         values.remove(position);
         notifyItemRemoved(position);
-    }*/
+    }
 
     // Constructor del adaptador, le pasamos lista tracks y actividad
     public MyAdapter(List<String> myDataset, Activity activity) {
