@@ -18,18 +18,23 @@ public class TrackActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_track);
 
+        //Recuperamos datos que nos pasa el intent al pulsar el track (en MyAdapter)
+        //para que nos muestre los detalles del track
         Intent i = getIntent();
         TextView idTV = findViewById(R.id.track_id);
         TextView titleTV = findViewById(R.id.track_title);
         TextView singerTV = findViewById(R.id.track_singer);
 
+        //Añadimos info que nos ha pasado a los textviews correspondientes
         idTV.setText(i.getStringExtra("id"));
         titleTV.setText(i.getStringExtra("title"));
         singerTV.setText(i.getStringExtra("singer"));
 
+        //Definimos los botones
         Button edit_btn = findViewById(R.id.update_btn);
         Button del_btn = findViewById(R.id.delete_btn);
 
+        //Boton editar
         edit_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,6 +43,8 @@ public class TrackActivity extends AppCompatActivity {
             }
         });
 
+        //Boton borrar
+        //Aparece cuadro de dialogo para confirmar la accion de borrar
         del_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

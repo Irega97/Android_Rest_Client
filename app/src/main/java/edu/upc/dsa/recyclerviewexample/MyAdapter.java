@@ -76,7 +76,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         final Track track = tracks.get(position);
         //Creamos holder para que las posiciones sean dinamicas
         final ViewHolder vh = holder;
-        //Asignamos nombre
+        //Asignamos titulo al row
         holder.txtHeader.setText(track.getTitle());
         //Asignamos evento
         holder.txtHeader.setOnClickListener(new OnClickListener() {
@@ -94,6 +94,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             }
         });
 
+        //Asignamos cantante al row
         holder.txtFooter.setText(track.getSinger());
     }
 

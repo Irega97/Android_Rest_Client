@@ -20,7 +20,7 @@ public interface API {
         Call<List<Track>> getTracks();
 
         @POST("tracks")
-        Call<Track> saveTrack (@Body Track track);
+        Call<Track> addTrack (@Body Track track);
 
         @PUT("tracks")
         Call<Void> updateTrack (@Body Track track);
