@@ -16,8 +16,6 @@ import retrofit2.http.Path;
 
 public interface API {
 
-    public interface Tracks_API {
-
         @GET("tracks")
         Call<List<Track>> getTracks();
 
@@ -30,5 +28,4 @@ public interface API {
         @DELETE("tracks/{id}")
         Call<Void> deleteTrack (@Path("id") String id);
 
-    }
 }
