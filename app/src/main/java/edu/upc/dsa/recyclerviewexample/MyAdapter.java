@@ -16,7 +16,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     //Aqui hay que declarar las cosas que queremos que se muestren en pantalla
     //Añadimos la actividad porque cambiaremos a otra
     //Los inicializamos en el constructor
-    private List<String> values;
+    private List<Track> tracks;
     Activity activity;
 
     // Provide a reference to the views for each data item
@@ -38,19 +38,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     //Funciones para modificar lista valores
-    public void add(int position, String item) {
-        values.add(position, item);
+    public void add(int position, Track track) {
+        tracks.add(position, track);
         notifyItemInserted(position);
     }
 
     public void remove(int position) {
-        values.remove(position);
+        tracks.remove(position);
         notifyItemRemoved(position);
     }
 
     // Constructor del adaptador, le pasamos lista tracks y actividad
-    public MyAdapter(List<String> myDataset, Activity activity) {
-        values = myDataset;
+    public MyAdapter(List<Track> tracklist, Activity activity) {
+        tracks = tracklist;
         this.activity = activity;
     }
 
@@ -73,11 +73,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        final String name = values.get(position);
+        final Track track = tracks.get(position);
         //Creamos holder para que las posiciones sean dinamicas
         final ViewHolder vh = holder;
         //Asignamos nombre
-        holder.txtHeader.setText(name);
+        holder.txtHeader.setText(track.getTitle());
         //Asignamos evento
         holder.txtHeader.setOnClickListener(new OnClickListener() {
             @Override
@@ -91,13 +91,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             }
         });
 
-        holder.txtFooter.setText("Footer: " + name);
+        holder.txtFooter.setText(track.getSinger());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return values.size();
+        return tracks.size();
     }
 
 }
