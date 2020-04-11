@@ -5,13 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class TrackActivity extends AppCompatActivity {
 
@@ -19,6 +17,15 @@ public class TrackActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_track);
+
+        Intent i = getIntent();
+        TextView idTV = findViewById(R.id.track_id);
+        TextView titleTV = findViewById(R.id.track_title);
+        TextView singerTV = findViewById(R.id.track_singer);
+
+        idTV.setText(i.getStringExtra("id"));
+        titleTV.setText(i.getStringExtra("title"));
+        singerTV.setText(i.getStringExtra("singer"));
 
         Button edit_btn = findViewById(R.id.update_btn);
         Button del_btn = findViewById(R.id.delete_btn);

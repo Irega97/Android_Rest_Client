@@ -87,6 +87,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
                 //Abrimos actividad info track al pinchar en un track
                 Intent i = new Intent(activity.getApplication(), TrackActivity.class);
+                i.putExtra("id", track.getId());
+                i.putExtra("title", track.getTitle());
+                i.putExtra("singer", track.getSinger());
                 activity.startActivity(i);
             }
         });

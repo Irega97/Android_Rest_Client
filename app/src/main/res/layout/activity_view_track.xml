@@ -7,64 +7,15 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/track_id"
-        android:layout_width="365dp"
-        android:layout_height="69dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.413"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="110dp"
+        android:id="@+id/textView5"
+        android:layout_width="108dp"
         android:layout_height="36dp"
-        android:background="#FFFFFF"
-        android:text="Titulo:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:text="Cantante:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/track_id"
-        app:layout_constraintVertical_bias="0.022" />
-
-    <TextView
-        android:id="@+id/track_title"
-        android:layout_width="228dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toEndOf="@+id/title"
-        app:layout_constraintTop_toBottomOf="@+id/track_id" />
-
-    <TextView
-        android:id="@+id/singer"
-        android:layout_width="111dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="8dp"
-        android:text="Cantante"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.063"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
-
-    <TextView
-        android:id="@+id/track_singer"
-        android:layout_width="228dp"
-        android:layout_height="42dp"
-        app:layout_constraintBottom_toTopOf="@+id/delete_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.32"
-        app:layout_constraintStart_toEndOf="@+id/singer"
-        app:layout_constraintTop_toBottomOf="@+id/track_title"
-        app:layout_constraintVertical_bias="0.09" />
+        app:layout_constraintTop_toBottomOf="@+id/track_title" />
 
     <Button
         android:id="@+id/update_btn"
@@ -91,6 +42,57 @@
         app:layout_constraintStart_toEndOf="@+id/update_btn"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.338" />
+
+    <TextView
+        android:id="@+id/track_title"
+        android:layout_width="348dp"
+        android:layout_height="61dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="108dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        android:text="ID:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/update_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/track_singer"
+        android:layout_width="222dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="24dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.226"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/track_title" />
+
+    <TextView
+        android:id="@+id/track_id"
+        android:layout_width="219dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="35dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/delete_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/track_singer"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
