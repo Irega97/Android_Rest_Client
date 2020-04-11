@@ -52,6 +52,7 @@ public class MainActivity extends Activity {
             }
         });
 
+        /*
         //String que se visualizan. Aqui es donde implementariamos lista Retrofit
         List<String> input = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
@@ -59,23 +60,25 @@ public class MainActivity extends Activity {
         }
 
         // define an adapter
-        mAdapter = new MyAdapter(input, MainActivity.this);
+        mAdapter = new MyAdapter(tracks, MainActivity.this);
         recyclerView.setAdapter(mAdapter);
+        */
 
-        /*//Creamos interceptor
+
+        //Creamos interceptor
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         //Creamos cliente
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(interceptor)
-                .build();*/
+                .build();
 
         //Crear retrofit
-        /*Retrofit retrofit = new Retrofit.Builder()
+        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://147.83.7.203:8080/dsaApp/")
                 .addConverterFactory(GsonConverterFactory.create())
-                //.client(client)
+                .client(client)
                 .build();
 
         //Llamamos a servicios que hemos definido en la API
@@ -98,6 +101,6 @@ public class MainActivity extends Activity {
                 Toast toast = Toast.makeText(getApplicationContext(), "ERROR", Toast.LENGTH_LONG);
                 toast.show();
             }
-        });*/
+        });
     }
 }
